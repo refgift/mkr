@@ -7,11 +7,11 @@
 %%
 int[ \t\n]+main	{ printf("\n#include <sched.h>\n"); ECHO; }
 
-while[ \t\n]*\(.+\)[ \t\n]*\{		{
+while[ \t\n]*\(+.+\)+[ \t\n]*\{		{
  					ECHO;
  	   				printf ("\n\t\tsched_yield();\n");   
 					}
-for[ \t\n]*\(.+\)[ \t\n]*\{		{
+for[ \t\n]*\(+.+\)+[ \t\n]*\{		{
  					ECHO;
  	   				printf ("\n\t\tsched_yield();\n");   
 					}
