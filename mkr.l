@@ -9,20 +9,15 @@
 %%
 int[ \t\n]+main	{ printf("\n#include <sched.h>\n"); ECHO; }
 while|for|do 	{
-		if (loop)
-  		    looped = true;
-    		else {
-      			looped = false;
-    			loop = true;
+			if (!loop) loop = true;
     			ECHO;
-			}
+			
   		}
 \{	{	
 		ECHO;
-	  	if (loop && !looped) {
+	  	if (loop) {
  	   		printf ("\n\t\tsched_yield();\n");
   			loop = false;
-  			looped = false;
 		}
 	}
 
